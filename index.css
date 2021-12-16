@@ -1,0 +1,51 @@
+html, body {
+  margin: 0;
+  font-family: 'Montserrat Alternates', sans-serif;
+  background-color: #F2F2F2;
+  color: #0A1C40;
+}
+
+.intro {
+  left: 5%;
+  background-color: #F2BB77;
+  border: 10px solid #FDE792;
+}
+
+.intro-title {
+  font-family: 'Montserrat Alternates';
+  font-weight: 600;
+  font-style: italic;
+}
+
+.friend-list {
+  position: relative;
+  left: 5%;
+  padding: 30px 20px 30px 60px;
+  background-color: #384C73;
+  border-right: 5px solid #0A1C40;
+  border-left: 200px solid #0A1C40;
+  color: #F2F2F2;
+}
+
+.friend {
+  border: 3px dashed #0A1C40;
+  text-align: center;
+}
+
+#about-friend {
+  color: #0A1C40;
+}
+
+
+#about-friend-name {
+ font-weight: 700;  
+}
+
+#about-friend-info {
+  border-right: 2px dashed #F2BB77;
+  border-top: 2px dashed #F2BB77;
+}
+
+
+
+
