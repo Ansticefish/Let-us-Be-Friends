@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Let's Be Friends</title>
+  <title>Let's Be Friends!</title>
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -15,52 +15,126 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@200;300;400;700&display=swap"
     rel="stylesheet">
   <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/0cf8e0fbda.js" crossorigin="anonymous">
+  </script>
   <!-- My CSS -->
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <div class="container min-vh-100 vw-100 mx-auto d-flex">
-    <div class="intro h-100 w-25 p-3 fixed-top d-flex flex-column justify-content-center rounded-3">
-      <h1 class="intro-title">My Friends</h1>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="a friend's name" aria-label="a friend's name"
-          aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="search-btn">Search</button>
-      </div>
-    </div>
-    <div class="friend-list container h-100 w-75">
-      <div class="row row-cols-3 g-3 render-friend-data">
-        <!--  render friends data      -->
-      </div>
+  <div class="container min-vh-100 vw-100">
+    <!-- Intro Section -->
+    <div class="intro w-75 mx-auto pt-4 d-flex flex-column align-items-center justify-content-end rounded-3">
+      <h1 class="intro-title">Let's Be Friends!</h1>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav">
+              <a class="nav-link me-5" href="myFriends.html">My Friends </a>
+              <form class="d-flex me-2">
+                <input class="form-control me-2" type="search" placeholder="name e.g. Vanessa" aria-label="Search"
+                  id="search-input">
+                <button class="btn btn-outline-success" type="submit" id="search-btn">Search</button>
+              </form>
+              <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Quick Search
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#" id="female">Female</a></li>
+                  <li><a class="dropdown-item" href="#" id="male">Male</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#" id="liked">Liked</a></li>
+                </ul>
+              </div>
+              <button type="button" class="ms-4" data-bs-toggle="modal" data-bs-target="#match-result"
+                id="match-friend">Match Friend!</button>
+            </div>
+          </div>
+        </div>
+      </nav>
     </div>
   
-    <!-- Modal -->
-    <div class="modal fade" id="about-friend" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Friend List Section -->
+    <div class="friend-list h-100 w-75 mx-auto">
+      <div class="row g-3 render-friend-data">
+        <!--  render friends data      -->
+      </div>
+      <!-- Pagination -->
+      <nav aria-label="Page navigation example">
+        <ul class="pagination pagination-sm justify-content-center mt-5">
+          <!-- render pagination -->
+        </ul>
+      </nav>
+    </div>
+  
+    <!-- Modal for match Friend -->
+    <div class="modal fade" id="match-result" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body d-flex justify-content-center align-items-center">
+          <div class="modal-body d-flex flex-column justify-content-center align-items-center">
             <div class="text-center mb-3">
               <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Photo" class="rounded-circle"
-                id="about-friend-avatar">
-              <h5 class="modal-title mt-3" id="about-friend-name">Vanessa Davis</h5>
+                id="match-friend-avatar">
+              <h5 class="modal-title mt-3" id="match-friend-name">Vanessa Davis</h5>
             </div>
-            <div class="p-3" id="about-friend-info">
-              <p id="about-friend-email">E-mail: justine.smith@example.com</p>
-              <p id="about-friend-bd">Birthday: 1995-05-05</p>
-              <p id="about-friend-region">From: AU</p>
+            <div class="p-4" id="match-friend-info">
+              <p id="match-friend-age">15</p>
+              <p id="match-friend-bd">Birthday: 1995-05-05</p>
+              <p id="match-friend-region">From: AU</p>
+              <p id="match-friend-email">E-mail: justine.smith@example.com</p>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="match-save" data-id=''>Save</button>
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
   </div>
   
+  
+  
+  
+  <!-- Modal for friend -->
+  <div class="modal fade" id="about-friend" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex justify-content-center align-items-center">
+          <div class="text-center mb-3">
+            <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Photo" class="rounded-circle"
+              id="about-friend-avatar">
+            <h5 class="modal-title mt-3" id="about-friend-name">Vanessa Davis</h5>
+          </div>
+          <div class="p-3" id="about-friend-info">
+            <p id="about-friend-age">15</p>
+            <p id="about-friend-bd">Birthday: 1995-05-05</p>
+            <p id="about-friend-region">From: AU</p>
+            <p id="about-friend-email">E-mail: justine.smith@example.com</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
   <!-- Axios -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
   <!-- Bootstrap -->
